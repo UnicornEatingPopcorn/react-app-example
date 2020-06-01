@@ -1,26 +1,25 @@
+// @flow
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+//import 'react-bulma-components/dist/react-bulma-components.min.css';
+//import { Button } from 'react-bulma-components';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="App-title">설정</h1>
+      <button className="button is-primary">My Bulma button</button>
+      <div className="tabs">
+        <ul>
+          <li className="is-active"><a>프로필</a></li>
+          <li><a>계정</a></li>
+          <li><a>결제수단</a></li>
+          <li><a>배송지</a></li>
+          <li><a>알림</a></li>
+        </ul>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
