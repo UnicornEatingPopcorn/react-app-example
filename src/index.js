@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker'
+import './fonts/AppleSDGothicNeoB.ttf'
+import './fonts/AppleSDGothicNeoR.ttf'
+import './fonts/AppleSDGothicNeoSB.ttf'
 
 ReactDOM.render(
   <React.StrictMode>

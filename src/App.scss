@@ -2,4 +2,50 @@
 
 .App-title {
   color: red
- }
+}
+
+.AddressTile {
+  width: 360px;
+  height: 85px;
+  border: solid 1px #8c8c8c;
+  background-color: #ffffff;
+  padding: 20px 23px;
+  position: relative;
+};
+
+.AddressTile_zipcode {
+  font-family: AppleSDGothicNeo;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  color: #3e3e3e;
+}
+
+.AddressTile_tag {
+  width: 45.9px;
+  height: 22px;
+  border-radius: 5px;
+  background-color: #ff5b5c;
+  font-family: AppleSDGothicNeo;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  top: 20px;
+  left: 88px;
+}
+
+.AddressTile_address {
+  font-family: AppleSDGothicNeo;
+  font-size: 14px;
+  font-style: normal;
+  color: #989898;
+  position: absolute;
+  top: 48px;
+}
+
+.AddressTile_button {
+  margin-top: 5px;
+  margin-right: 0px;
+}
