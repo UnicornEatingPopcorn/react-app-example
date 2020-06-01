@@ -11,11 +11,8 @@ function App() {
     <div>
       <h1 className="App-title">설정</h1>
       <Tabs/>
-      <div className="columns">
-        <div className="column">등록된 배송지</div>
-        <div className="column">
-          <a>+추가</a></div>
-      </div>
+      <p className="App-subtitle">등록된 배송지</p>
+      <a className="App-link">+추가</a>
       <AddressTile/>
     </div>
   )
