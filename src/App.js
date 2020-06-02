@@ -8,7 +8,13 @@ import AddressTile from './components/AddressTile'
 
 class App extends Component {
   render() {
-    const tabs = ['프로필', '계정', '결제수단', '배송지', '알림']
+    const tabs = [
+      {name:'프로필', isActive: false},
+      {name:'계정', isActive:false},
+      {name:'결제수단', isActive:false},
+      {name:'배송지', isActive:true},
+      {name:'알림', isActive: false}
+    ]
     return (
       <div>
         <h1 className="App-title">설정</h1>
