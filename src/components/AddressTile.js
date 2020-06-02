@@ -2,16 +2,52 @@ import React, { Component } from 'react';
 import button from '../button.png'
 
 class AddressTile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      addresses: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/addresses")
+      .then(response => response.json())
+      .then(data => {
+          this.setState({
+            isLoaded: true,
+            addresses: data,
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
+
   render() {
-    return (
-      <div className="AddressTile">
-        <p className="AddressTile_zipcode">[123456]</p>
-        <span className="AddressTile_tag">기본</span>
-        <p className="AddressTile_address">서울시 강남구 강남대로 345, 12층 1201호</p>
-        <img src={button} className="AddressTile_button"></img>
-      </div>
-    )
+    const { error, isLoaded, addresses } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <ul>{addresses.map((address) => (
+          <div className="AddressTile" key={address.id}>
+            <p className="AddressTile_zipcode">[{address.postnumber}]</p>
+            <span className="AddressTile_tag">기본</span>
+            <p className="AddressTile_address">{address.address}</p>
+            <img src={button} className="AddressTile_button"></img>
+          </div>
+        ))}
+        </ul>
+      );
+    }
   }
 }
-
 export default AddressTile
