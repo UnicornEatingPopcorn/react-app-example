@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 class Tabs extends Component {
   render() {
     const {characterData} = this.props;
-    const result = characterData.map((tab, index)=>{
+    const result = characterData.map((tab,index)=>{
       return (
-        <ul>
-          <li key={tab.index} className={tab.isActive ? "is-active" : ""}><a>{tab.name}</a></li>
+        <ul key={index}>
+          <li className={tab.isActive ? "is-active" : ""}><a>{tab.name}</a></li>
         </ul>
       )
     })

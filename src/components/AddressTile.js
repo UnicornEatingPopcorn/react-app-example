@@ -37,10 +37,10 @@ class AddressTile extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>{addresses.map((address) => (
+        <ul>{addresses.map((address,index) => (
           <div className="AddressTile" key={address.id}>
             <p className="AddressTile_zipcode">[{address.postnumber}]</p>
-            <span className="AddressTile_tag">기본</span>
+            <span className={address.index = 1 ? "AddressTile_tag" : ""}>기본</span>
             <p className="AddressTile_address">{address.address}</p>
             <img src={button} className="AddressTile_button"></img>
           </div>
