@@ -13,10 +13,26 @@ $tabs-link-active-color: red;
   @media(min-width: 768px)
     display: block
 
-.App_tablet-container
-  margin: 20px 42px
+  @media(min-width: 1024px)
+    display: none
+
+#desktop-version
+  display: none
+  margin: 0px 42px 255px 42px
+
+  @media(min-width: 1024px)
+    display: block
+
+.App_tablet-tiles
+  margin: 20px 42px 0px 42px
   border-radius: 8px
   border: solid 1px #979797
+
+  @media(min-width: 1024px)
+    margin: 20px 42px 0px 0px
+
+.App_mobile-tiles
+  margin-top: 20px
 
 .App_title
   font-family: AppleSDGothicNeo
@@ -29,20 +45,26 @@ $tabs-link-active-color: red;
   margin-left: 28px
   margin-bottom: 60px
 
+.App_mobile-container
+  margin: 50px 20px 0px 20px
+  display: flex
+  justify-content: space-between
+
+.App_tablet-container
+  margin: 50px 42px 0px 42px
+  display: flex
+  justify-content: space-between
+
+  @media(min-width: 1024px)
+    margin: 50px 42px 0px 0px
+
 .App_subtitle
   font-family: AppleSDGothicNeo
   font-size: 20px
   font-weight: 600
   color: #3e3e3e
-  margin-left: 20px
-  margin-top: 43px
-  margin-bottom: 20px
 
 .App_link
-  position: absolute
-  top: 226px
-  right: 20px
-  bottom: 20px
   text-decoration: underline
 
 .App_button
@@ -69,8 +91,12 @@ $tabs-link-active-color: red;
 
   @media(min-width: 768px)
     width: 100%
-    margin: 20px 42px 
+    margin: 0px 42px 
     height: 114px
+
+  @media(min-width: 1024px)
+    height: 174px
+    margin: 0px
 
   &-container
     display: flex
@@ -78,9 +104,19 @@ $tabs-link-active-color: red;
     justify-content: center
     height: 255px
 
+    @media(min-width: 768px)
+      height: unset
+      margin: 30px 0px 50px 0px
+      align-items: baseline
+
+    @media(min-width: 1024px)
+      height: 174px
+      margin: 99px 42px 0px 0px
+
   &-title
     font-family: AppleSDGothicNeo
     font-size: 17px
+    width: 210px
     font-weight: 600
     color: #3e3e3e
     font-stretch: normal
@@ -93,9 +129,13 @@ $tabs-link-active-color: red;
     @media(min-width:768px)
       height: 20px
 
+    @media(min-width: 1024px)
+      height: 40px
+
   &-subtitle
     font-family: AppleSDGothicNeo
     font-size: 13px
+    width: 210px
     line-height: 1.54
     color: #989898
     height: 60px
@@ -105,6 +145,9 @@ $tabs-link-active-color: red;
 
     @media(min-width:768px)
       height: 40px
+
+    @media(min-width: 1024px)
+      height: 80px
 
 .AddressTile
   height: 85px
