@@ -1,7 +1,7 @@
 @import "~bulma";
 $tabs-link-active-color: red;
 
-.App-title {
+.App_title {
   font-family: AppleSDGothicNeo;
   font-size: 36px;
   font-weight: bold;
@@ -13,7 +13,7 @@ $tabs-link-active-color: red;
   margin-bottom: 60px;
 }
 
-.App-subtitle {
+.App_subtitle {
   font-family: AppleSDGothicNeo;
   font-size: 20px;
   font-weight: 600;
@@ -23,7 +23,7 @@ $tabs-link-active-color: red;
   margin-bottom: 20px;
 }
 
-.App-link {
+.App_link {
   position: absolute;
   top: 226px;
   right: 20px;
@@ -31,8 +31,59 @@ $tabs-link-active-color: red;
   text-decoration: underline;
 }
 
+.App_button {
+  height: 50px;
+  border-bottom: solid 1px #8c8c8c;
+  border-top: solid 1px #8c8c8c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: AppleSDGothicNeo;
+  font-size: 16px;
+  color: #252525;
+}
+
+.App_info {
+  width: 320px;
+  height: 154px;
+  border-radius: 8px;
+  border: solid 1px #979797;
+  background-color: #ffffff;
+  padding: 20px;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 255px;
+}
+
+  &-title {
+    font-family: AppleSDGothicNeo;
+    font-size: 17px;
+    font-weight: 600;
+    color: #3e3e3e;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    height: 40px;
+    margin-bottom: 14px;
+  }
+
+  &-subtitle {
+    font-family: AppleSDGothicNeo;
+    font-size: 13px;
+    line-height: 1.54;
+    color: #989898;
+    height: 60px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+  }
+}
+
 .AddressTile {
-  width: 360px;
   height: 85px;
   border-top: solid 1px #8c8c8c;
   background-color: #ffffff;
