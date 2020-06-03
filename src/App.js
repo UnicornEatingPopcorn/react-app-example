@@ -1,6 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import './App.sass';
+import './variables.sass';
 import Tabs from './components/Tabs'
 import AddressTile from './components/AddressTile'
 import AppInfo from './components/AppInfo'

@@ -21,4 +21,4 @@ class Tabs extends Component {
   }
 }
 
-  export default Tabs
+export default Tabs
