@@ -40,8 +40,8 @@ class AddressTile extends Component {
         <ul>{addresses.map((address,index) => (
           <div className="AddressTile" key={address.id}>
             <p className="AddressTile_zipcode">[{address.postnumber}]</p>
-              <span className={index == 0 ? "AddressTile_tag" : ""}>
-                <p className={index == 0 ? "visible" : "is-hidden"}>기본</p></span>
+              <span className={index === 0 ? "AddressTile_tag" : ""}>
+                <p className={index === 0 ? "visible" : "is-hidden"}>기본</p></span>
             <p className="AddressTile_address">{address.address}</p>
             <img src={button} className="AddressTile_button"></img>
           </div>
