@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import button from '../button.png'
+import AppMenu from './AppMenu';
 
 class AddressTile extends Component {
   constructor(props) {
@@ -39,11 +39,11 @@ class AddressTile extends Component {
       return (
         <ul>{addresses.map((address,index) => (
           <div className="AddressTile" key={address.id}>
-            <p className="AddressTile_zipcode">[{address.postnumber}]</p>
-              <span className={index === 0 ? "AddressTile_tag" : ""}>
+            <p className="AddressTile__postnumber">[{address.postnumber}]</p>
+              <span className={index === 0 ? "AddressTile__tag" : ""}>
                 <p className={index === 0 ? "visible" : "is-hidden"}>기본</p></span>
-            <p className="AddressTile_address">{address.address}</p>
-            <img src={button} className="AddressTile_button"></img>
+            <p className="AddressTile__address">{address.address}</p>
+            <AppMenu/>
           </div>
         ))}
         </ul>

@@ -10,40 +10,40 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1 className="App_title">설정</h1>
+        <h1 className="App__title">설정</h1>
         <Tabs/>
         <div id="mobile-version">
-          <div className="App_mobile-container">
-            <p className="App_subtitle">등록된 배송지</p>
-            <a className="App_link">+추가</a>
+          <div className="App__mobile-container">
+            <p className="App__subtitle">등록된 배송지</p>
+            <a className="App__link">+추가</a>
           </div>
-          <div className="App_mobile-tiles">
+          <div className="App__mobile-tiles">
             <AddressTile/>
-            <div className="App_button">더보기</div>
+            <div className="App__button">더보기</div>
             <AppInfo/>
           </div>
         </div>
         <div id="tablet-version">
-          <div className="App_tablet-container">
-            <p className="App_subtitle">등록된 배송지</p>
-            <a className="App_link">+추가</a>
+          <div className="App__tablet-container">
+            <p className="App__subtitle">등록된 배송지</p>
+            <a className="App__link">+추가</a>
           </div>
-          <div className="App_tablet-tiles">
+          <div className="App__tablet-tiles">
             <AddressTile/>
-            <div className="App_button">더보기</div>
+            <div className="App__button">더보기</div>
           </div>
           <AppInfo/>
         </div>
         <div id="desktop-version">
           <div className="columns">
             <div className="column is-paddingless is-9">
-              <div className="App_tablet-container">
-                <p className="App_subtitle">등록된 배송지</p>
-                <a className="App_link">+추가</a>
+              <div className="App__tablet-container">
+                <p className="App__subtitle">등록된 배송지</p>
+                <a className="App__link">+추가</a>
               </div>
-              <div className="App_tablet-tiles">
+              <div className="App__tablet-tiles">
                 <AddressTile/>
-                <div className="App_button">더보기</div>
+                <div className="App__button">더보기</div>
               </div>
             </div>
             <div className="column is-paddingless">
@@ -51,7 +51,6 @@ class App extends Component {
             </div>
           </div>
         </div>
-
       </div>
     )
   }

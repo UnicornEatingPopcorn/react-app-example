@@ -22,131 +22,165 @@
   @media(min-width: 1024px)
     display: block
 
-.App_tablet-tiles
-  margin: 20px 42px 0px 42px
-  border-radius: 8px
-  border: solid 1px #979797
+.App
+  &__tablet-tiles
+    margin: 20px 42px 0px 42px
+    border-radius: 8px
+    border: solid 1px #979797
 
-  @media(min-width: 1024px)
-    margin: 20px 42px 0px 0px
+    @media(min-width: 1024px)
+      margin: 20px 42px 0px 0px
 
-.App_mobile-tiles
-  margin-top: 20px
+  &__mobile-tiles
+    margin-top: 20px
 
-.App_title
-  font-family: AppleSDGothicNeo
-  font-size: 36px
-  font-weight: bold
-  line-height: normal
-  letter-spacing: normal
-  color: #000000
-  margin-top: 26px
-  margin-left: 28px
-  margin-bottom: 60px
+  &__title
+    font-family: AppleSDGothicNeo
+    font-size: 36px
+    font-weight: bold
+    line-height: normal
+    letter-spacing: normal
+    color: #000000
+    margin-top: 26px
+    margin-left: 28px
+    margin-bottom: 60px
 
-.App_mobile-container
-  margin: 50px 20px 0px 20px
-  display: flex
-  justify-content: space-between
+  &__mobile-container
+    margin: 50px 20px 0px 20px
+    display: flex
+    justify-content: space-between
 
-.App_tablet-container
-  margin: 50px 42px 0px 42px
-  display: flex
-  justify-content: space-between
+  &__tablet-container
+    margin: 50px 42px 0px 42px
+    display: flex
+    justify-content: space-between
 
-  @media(min-width: 1024px)
-    margin: 50px 42px 0px 0px
+    @media(min-width: 1024px)
+      margin: 50px 42px 0px 0px
 
-.App_subtitle
-  font-family: AppleSDGothicNeo
-  font-size: 20px
-  font-weight: 600
-  color: #3e3e3e
+  &__subtitle
+    font-family: AppleSDGothicNeo
+    font-size: 20px
+    font-weight: 600
+    color: #3e3e3e
 
-.App_link
-  text-decoration: underline
+  &__link
+    text-decoration: underline
 
-.App_button
-  height: 50px;
-  border-bottom: solid 1px #8c8c8c
-  border-top: solid 1px #8c8c8c
-  display: flex
-  align-items: center
-  justify-content: center
-  font-family: AppleSDGothicNeo
-  font-size: 16px
-  color: #252525
-
-  @media(min-width: 768px)
-    border-bottom: none
-
-.App_info
-  width: 320px
-  height: 154px
-  border-radius: 8px
-  border: solid 1px #979797
-  background-color: #ffffff
-  padding: 20px
-
-  @media(min-width: 768px)
-    width: 100%
-    margin: 0px 42px 
-    height: 114px
-
-  @media(min-width: 1024px)
-    height: 174px
-    margin: 0px
-
-  &-container
+  &__button
+    height: 50px;
+    border-bottom: solid 1px #8c8c8c
+    border-top: solid 1px #8c8c8c
     display: flex
     align-items: center
     justify-content: center
-    height: 255px
+    font-family: AppleSDGothicNeo
+    font-size: 16px
+    color: #252525
 
     @media(min-width: 768px)
-      height: unset
-      margin: 30px 0px 50px 0px
-      align-items: baseline
+      border-bottom: none
+
+  &__info
+    width: 320px
+    height: 154px
+    border-radius: 8px
+    border: solid 1px #979797
+    background-color: #ffffff
+    padding: 20px
+
+    @media(min-width: 768px)
+      width: 100%
+      margin: 0px 42px 
+      height: 114px
 
     @media(min-width: 1024px)
       height: 174px
-      margin: 99px 42px 0px 0px
+      margin: 0px
 
-  &-title
-    font-family: AppleSDGothicNeo
-    font-size: 17px
-    width: 210px
-    font-weight: 600
-    color: #3e3e3e
-    font-stretch: normal
-    font-style: normal
-    line-height: normal
-    letter-spacing: normal
-    height: 40px
-    margin-bottom: 14px
+    &-container
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 255px
 
-    @media(min-width:768px)
-      height: 20px
+      @media(min-width: 768px)
+        height: unset
+        margin: 30px 0px 50px 0px
+        align-items: baseline
 
-    @media(min-width: 1024px)
+      @media(min-width: 1024px)
+        height: 174px
+        margin: 99px 42px 0px 0px
+
+    &-title
+      font-family: AppleSDGothicNeo
+      font-size: 17px
+      width: 280px
+      font-weight: 600
+      color: #3e3e3e
+      font-stretch: normal
+      font-style: normal
+      line-height: normal
+      letter-spacing: normal
       height: 40px
+      margin-bottom: 14px
 
-  &-subtitle
-    font-family: AppleSDGothicNeo
-    font-size: 13px
-    width: 210px
-    line-height: 1.54
-    color: #989898
-    height: 60px
-    font-weight: normal
-    font-stretch: normal
-    font-style: normal
+      @media(min-width:768px)
+        height: 20px
+        width: 100%
 
-    @media(min-width:768px)
+      @media(min-width: 1024px)
+        height: 40px
+        width: 210px
+
+    &-subtitle
+      font-family: AppleSDGothicNeo
+      font-size: 13px
+      width: 280px
+      line-height: 1.54
+      color: #989898
+      height: 60px
+      font-weight: normal
+      font-stretch: normal
+      font-style: normal
+
+      @media(min-width:768px)
+        height: 40px
+        width: 100%
+
+      @media(min-width: 1024px)
+        height: 80px
+        width: 210px
+
+  &__menu
+    width: 168px
+    height: 100px
+    border-radius: 4px
+    box-shadow: 2px 2px 3px 0 rgba(122, 122, 122, 0.5)
+    border: solid 1px #cdcdcd
+    padding-top: 10px
+    background: white
+    position: absolute
+    right: 26px
+    top: 59px
+    z-index: 2
+
+    &-selected
       height: 40px
+      background-color: #f4f4f4
+      font-family: AppleSDGothicNeo
+      font-size: 16px
+      color: #3e3e3e
+      padding: 10px 0px 0px 19px
+      line-height: normal
 
-    @media(min-width: 1024px)
-      height: 80px
+    &-option
+      font-family: AppleSDGothicNeo
+      font-size: 16px
+      color: #3e3e3e
+      padding: 10px 0px 0px 19px
+      line-height: normal     
 
 .AddressTile
   height: 85px
@@ -158,39 +192,39 @@
     @media(min-width: 768px)
        border-top: none
 
-.AddressTile_zipcode
-  font-family: AppleSDGothicNeo
-  font-size: 16px
-  font-weight: 600
-  line-height: normal
-  color: #3e3e3e
+  &__postnumber
+    font-family: AppleSDGothicNeo
+    font-size: 16px
+    font-weight: 600
+    line-height: normal
+    color: #3e3e3e
 
-.AddressTile_tag
-  width: 45.9px
-  height: 22px
-  border-radius: 5px
-  background-color: #ff5b5c
-  font-family: AppleSDGothicNeo
-  font-size: 14px
-  font-weight: 600
-  text-align: center
-  color: #ffffff
-  position: absolute
-  top: 20px
-  left: 92px
+  &__tag
+    width: 45.9px
+    height: 22px
+    border-radius: 5px
+    background-color: #ff5b5c
+    font-family: AppleSDGothicNeo
+    font-size: 14px
+    font-weight: 600
+    text-align: center
+    color: #ffffff
+    position: absolute
+    top: 20px
+    left: 92px
 
-.AddressTile_address
-  font-family: AppleSDGothicNeo
-  font-size: 14px
-  font-style: normal
-  color: #989898
-  position: absolute
-  top: 44px
+  &__address
+    font-family: AppleSDGothicNeo
+    font-size: 14px
+    font-style: normal
+    color: #989898
+    position: absolute
+    top: 44px
 
-.AddressTile_button
-  position: absolute
-  top: 25px
-  right: 23px
+  &__button
+    position: absolute
+    top: 25px
+    right: 23px
 
 .tabs 
   li
