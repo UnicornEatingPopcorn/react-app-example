@@ -235,6 +235,33 @@
     top: 25px
     right: 23px
 
+  &__default
+    display: flex
+    justify-content: center
+    align-items: center
+    animation: cssAnimation 3s ease-out
+    animation-fill-mode: forwards
+
+    @keyframes cssAnimation
+     0% { transform: scale(1);opacity: 1}
+     50% { transform: scale(1);opacity: 1}
+     100% { transform: scale(2);opacity: 0}
+
+  &__default-address
+    width: 328px
+    height: 60px
+    border-radius: 6px
+    background-color: rgba(107, 107, 107, 0.7)
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 22px
+    font-weight: 600
+    color: white
+
+
+
 .tabs 
   li
     font-size: 20px

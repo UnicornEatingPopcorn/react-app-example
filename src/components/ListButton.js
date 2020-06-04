@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddressTile from './AddressTile';
+import AddressTile from "./AddressTile"
 
 class ListButton extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class ListButton extends Component {
 
   handleClick() {
     this.setState( state=>({
-      isToggleOn: !state.isToggleOn
+      isToggleOn: !state.isToggleOn,
     }));
   }
 

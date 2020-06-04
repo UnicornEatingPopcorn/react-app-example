@@ -3,12 +3,11 @@ import React, {Component} from 'react';
 import './App.sass';
 import './variables.sass';
 import Tabs from './components/Tabs'
-import AddressTile from './components/AddressTile'
+import AddressTiles from './components/AddressTiles'
 import AppInfo from './components/AppInfo'
-import ListButton from './components/ListButton';
 
 class App extends Component {
-  render() {
+   render() {
     return (
       <div>
         <h1 className="App__title">설정</h1>
@@ -19,8 +18,7 @@ class App extends Component {
             <a className="App__link">+추가</a>
           </div>
           <div className="App__mobile-tiles">
-            <AddressTile/>
-            <ListButton/>
+            <AddressTiles/>
             <AppInfo/>
           </div>
         </div>
@@ -30,8 +28,7 @@ class App extends Component {
             <a className="App__link">+추가</a>
           </div>
           <div className="App__tablet-tiles">
-            <AddressTile/>
-            <ListButton/>
+            <AddressTiles/>
           </div>
           <AppInfo/>
         </div>
@@ -43,8 +40,7 @@ class App extends Component {
                 <a className="App__link">+추가</a>
               </div>
               <div className="App__tablet-tiles">
-                <AddressTile/>
-                <ListButton/>
+                <AddressTiles/>
               </div>
             </div>
             <div className="column is-paddingless">

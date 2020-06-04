@@ -1,55 +1,45 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import AppMenu from './AppMenu';
 
 class AddressTile extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      addresses: [],
-    };
+      super(props);
+      this.handleClick = this.handleClick.bind(this);
+      this.state = {
+        isClicked: false,
+        isToggleOn: false
+      };
   }
 
-  componentDidMount() {
-    fetch("http://localhost:3000/addresses")
-      .then(response => response.json())
-      .then(data => {
-          this.setState({
-            isLoaded: true,
-            addresses: data,
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
+  handleClick() {
+    this.setState( state=>({
+      isClicked: !state.isClicked,
+      isToggleOn: !state.isToggleOn
+    }));
   }
 
   render() {
-    const toggle = this.props.isToggleOn;
-    const { error, isLoaded, addresses } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
-      return (
-        <ul>{addresses.slice(0,5).map((address,index) => (
-          <div className={toggle ? "AddressTile__first-child_visible" : "AddressTile"} key={address.id}>
-            <p className="AddressTile__postnumber">[{address.postnumber}]</p>
-              <span className={index === 0 ? "AddressTile__tag" : ""}>
-                <p className={index === 0 ? "visible" : "is-hidden"}>기본</p></span>
-            <p className="AddressTile__address">{address.address}</p>
-            <AppMenu/>
-          </div>
-        ))}
-        </ul>
-      );
-    }
+    const address = this.props.address
+    const toggle = this.props.isToggleOn
+    const setDefaultAddress = this.state.isClicked
+
+    return (
+      <div>
+        <div className={toggle ? "AddressTile__first-child_visible" : "AddressTile"} onClick={this.handleClick}>
+          <p className="AddressTile__postnumber">[{address.postnumber}]</p>
+          <p className="AddressTile__address">{address.address}</p>
+          <AppMenu/>
+          <span className={setDefaultAddress ? "AddressTile__tag" : ""}>
+            <p className={setDefaultAddress ? "visible" : "is-hidden"}>기본</p></span>
+              </div>
+        <div className={setDefaultAddress ? "AddressTile__default" : "is-hidden"}>
+          <span className="AddressTile__default-address">
+            <p>기본 배송지가 변경되었습니다.</p></span>
+        </div>
+      </div>
+    );
+
   }
 }
+
 export default AddressTile
