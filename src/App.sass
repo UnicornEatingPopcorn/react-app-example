@@ -194,6 +194,7 @@
   &:first-child
     @media(min-width: 768px)
       border-top: none
+      border-bottom: solid 1px #8c8c8c
 
   &__first-child_visible
     height: 85px
@@ -260,7 +261,8 @@
     font-weight: 600
     color: white
 
-
+    @media(min-width: 768px)
+      width: 400px
 
 .tabs 
   li
@@ -273,6 +275,66 @@
 .tab__active-link
   font-weight: bold
   border-bottom-width: 2px !important
+
+.Modal
+  &__container
+    width: 312px !important
+    height: 180px
+    border-radius: 6px
+    box-shadow: 1px 3px 5px 0 rgba(47, 46, 46, 0.5)
+    border: solid 1px #979797
+    background-color: #ffffff
+    position: relative
+
+  &__horizontal-divider
+    width: 312px
+    height: 1px
+    background-color: rgba(118, 118, 118, 0.8)
+    position: absolute
+    top: 112px
+
+  &__vertical-divider
+    height: 65px
+    width: 1px
+    background-color: rgba(118, 118, 118, 0.8)
+    position: absolute
+    bottom: 0
+    left: 155px
+
+  &__question
+    height: 113px
+    font-family: AppleSDGothicNeo
+    font-size: 18px
+    font-weight: 600
+    color: #2f2f2f
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &__accept-button
+    height: 67px
+    font-family: AppleSDGothicNeo
+    font-size: 18px
+    font-weight: 600
+    color: #ed635e  
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 155px
+
+  &__decline-button
+    height: 67px
+    font-family: AppleSDGothicNeo
+    font-size: 18px
+    font-weight: 600
+    color: #363636  
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 155px
+    position: absolute
+    right: 0
+    bottom: 0
 
 @import "~bulma/bulma.sass"
 
