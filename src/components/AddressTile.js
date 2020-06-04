@@ -30,6 +30,7 @@ class AddressTile extends Component {
   }
 
   render() {
+    const toggle = this.props.isToggleOn;
     const { error, isLoaded, addresses } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -37,8 +38,8 @@ class AddressTile extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>{addresses.map((address,index) => (
-          <div className="AddressTile" key={address.id}>
+        <ul>{addresses.slice(0,5).map((address,index) => (
+          <div className={toggle ? "AddressTile__first-child_visible" : "AddressTile"} key={address.id}>
             <p className="AddressTile__postnumber">[{address.postnumber}]</p>
               <span className={index === 0 ? "AddressTile__tag" : ""}>
                 <p className={index === 0 ? "visible" : "is-hidden"}>기본</p></span>

@@ -78,6 +78,9 @@
     font-size: 16px
     color: #252525
 
+    &-invisible
+      display: none
+
     @media(min-width: 768px)
       border-bottom: none
 
@@ -190,7 +193,13 @@
 
   &:first-child
     @media(min-width: 768px)
-       border-top: none
+      border-top: none
+
+  &__first-child_visible
+    height: 85px
+    border-top: solid 1px #8c8c8c
+    padding: 20px 23px
+    position: relative
 
   &__postnumber
     font-family: AppleSDGothicNeo

@@ -5,6 +5,7 @@ import './variables.sass';
 import Tabs from './components/Tabs'
 import AddressTile from './components/AddressTile'
 import AppInfo from './components/AppInfo'
+import ListButton from './components/ListButton';
 
 class App extends Component {
   render() {
@@ -19,7 +20,7 @@ class App extends Component {
           </div>
           <div className="App__mobile-tiles">
             <AddressTile/>
-            <div className="App__button">더보기</div>
+            <ListButton/>
             <AppInfo/>
           </div>
         </div>
@@ -30,7 +31,7 @@ class App extends Component {
           </div>
           <div className="App__tablet-tiles">
             <AddressTile/>
-            <div className="App__button">더보기</div>
+            <ListButton/>
           </div>
           <AppInfo/>
         </div>
@@ -43,7 +44,7 @@ class App extends Component {
               </div>
               <div className="App__tablet-tiles">
                 <AddressTile/>
-                <div className="App__button">더보기</div>
+                <ListButton/>
               </div>
             </div>
             <div className="column is-paddingless">
