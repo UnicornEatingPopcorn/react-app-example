@@ -9,21 +9,21 @@ class AddressTile extends Component {
       this.handleTagClick = this.handleTagClick.bind(this);
       this.state = {
         isClicked: false,
-        isToggleOn: false,
-        isModalOpen: false
+        //isToggleOn: false,
+        modalOpen: false
       };
   }
 
   handleClick() {
     this.setState( state=>({
       isClicked: !state.isClicked,
-      isToggleOn: !state.isToggleOn
+      //isToggleOn: !state.isToggleOn
     }));
   }
 
   handleTagClick() {
-    this.setState(state =>({
-      isModalOpen: !state.isModalOpen
+    this.setState( state=> ({
+      modalOpen: !state.modalOpen
     }))
   }
 
@@ -31,7 +31,7 @@ class AddressTile extends Component {
     const address = this.props.address
     //const toggle = this.state.isToggleOn
     const setDefaultAddress = this.state.isClicked
-    const openModal = this.state.isModalOpen
+    const modalOpenRequest = this.state.modalOpen
 
     return (
       <div>
@@ -39,14 +39,18 @@ class AddressTile extends Component {
           <p className="AddressTile__postnumber">[{address.postnumber}]</p>
           <p className="AddressTile__address">{address.address}</p>
           <AppMenu/>
-          <span className={setDefaultAddress ? "AddressTile__tag" : ""}>
-            <p className={setDefaultAddress ? "visible" : "is-hidden"} onClick={this.handleTagClick}>기본</p></span>
-              </div>
+          <span className={setDefaultAddress ? "AddressTile__tag" : ""} onClick={this.handleTagClick}>
+            <p className={setDefaultAddress ? "visible" : "is-hidden"}>기본
+            </p>
+          </span>
+        </div>
         <div className={setDefaultAddress ? "AddressTile__default" : "is-hidden"}>
           <span className="AddressTile__default-address">
-            <p>기본 배송지가 변경되었습니다.</p></span>
+            <p>기본 배송지가 변경되었습니다.
+            </p>
+          </span>
         </div>
-        <Modal className={openModal ? "is-active" : ""}/>
+        <Modal isOpened={modalOpenRequest}/>
       </div>
     );
 
