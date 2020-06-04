@@ -11,7 +11,7 @@ class Tabs extends Component {
     ]
     const result = tabs.map((tab,index)=>{
       return (
-          <li key={index} className={tab.isActive ? "is-active" : ""}><a>{tab.name}</a></li>
+          <li key={index} className={tab.isActive ? "is-active" : ""}><a className={tab.isActive ? "tab__active-link" : ""}>{tab.name}</a></li>
       )
     })
     return <div className="tabs">
