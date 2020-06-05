@@ -10,13 +10,21 @@ import NewAddressForm from './components/NewAddressForm';
 class App extends Component {
   constructor(props){
     super(props);
+    this.openNewAddressForm = this.openNewAddressForm.bind(this)
     this.state = {
-       addresses: []
+      addresses: [],
+      isOpenForm: false
     }
   }
 
   handleSubmit = address => {
     this.setState({ addresses: [...this.state.addresses, address] })
+  }
+
+  openNewAddressForm() {
+    this.setState(()=>({
+      isOpenForm: true
+    }))
   }
 
   render() {
@@ -37,7 +45,7 @@ class App extends Component {
       <div id="tablet-version">
         <div className="App__tablet-container">
           <p className="App__subtitle">등록된 배송지</p>
-          <a className="App__link">+추가</a>
+          <a className="App__link" onClick={this.openNewAddressForm}>+추가</a>
         </div>
         <div className="App__tablet-tiles">
           <AddressTiles/>
@@ -60,7 +68,7 @@ class App extends Component {
           </div>
         </div>
       </div>
-      <NewAddressForm handleSubmit={this.handleSubmit}/>
+      <NewAddressForm handleSubmit={this.handleSubmit} openRequest={this.isOpenForm}/>
     </div>
     )
   }

@@ -27,34 +27,39 @@ class NewAddressForm extends Component {
   }
 
   render() {
+    const openForm = this.props.openRequest
     const {name, postalCode, address} = this.state;
 
     return (
-      <form className="NewAddressForm" onSubmit={this.handleSubmit}>
-        <div className="NewAddressForm__start">
-          <p className="NewAddressForm__title">배송지 추가</p>
-          <p className="NewAddressForm__close-button">X</p>
-        </div>
-        <div className="control NewAddressForm__name-input">
-          <input className="input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange}/>
-        </div>
-        <div className="control NewAddressForm__postalCode-input">
-          <input className="input" type="text" name="postalCode" value={postalCode} placeholder="우편번호" onChange={this.handleInputChange}/>
-        </div>
-        <div className="control NewAddressForm__address-input">
-          <input className="input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange}/>
-        </div>
-        <div className="control">
-          <label className="checkbox">
-            <input type="checkbox"/>
-            기본 배송지로 등록
-          </label>
-        </div>
-        <div className="control">
-          <button className="button NewAddressForm__button is-danger">등록 완료</button>
-        </div>
-      </form>
-    );
+      <div>
+        { openForm &&
+          <form className="NewAddressForm" onSubmit={this.handleSubmit}>
+            <div className="NewAddressForm__start">
+              <p className="NewAddressForm__title">배송지 추가</p>
+              <p className="NewAddressForm__close-button">X</p>
+            </div>
+            <div className="control NewAddressForm__name-input">
+              <input className="input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange}/>
+            </div>
+            <div className="control NewAddressForm__postalCode-input">
+              <input className="input" type="text" name="postalCode" value={postalCode} placeholder="우편번호" onChange={this.handleInputChange}/>
+            </div>
+            <div className="control NewAddressForm__address-input">
+              <input className="input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange}/>
+            </div>
+            <div className="control">
+              <label className="checkbox">
+                <input type="checkbox"/>
+                기본 배송지로 등록
+              </label>
+            </div>
+            <div className="control">
+              <button className="button NewAddressForm__button is-danger">등록 완료</button>
+            </div>
+          </form>
+        }
+      </div>
+      )
   }
 }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import button from '../button.png';
 import Modal from "./Modal";
 
-class AppMenu extends Component {
+class Menu extends Component {
   constructor(props) {
     super(props);
     this.setDefaultAddress = this.setDefaultAddress.bind(this);
@@ -44,14 +44,14 @@ class AppMenu extends Component {
 
     return (
       <div>
-        <div className="App__container" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
+        <div className="Menu__container" onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
           <img src={button} className="AddressTile__button"></img>
         </div>
         {
           this.state.isHovering &&
-          <div className="App__menu">
-            <p className="App__menu-selected" onClick={this.setDefaultAddress}>기본 배송지 설정</p>
-            <p className="App__menu-delete" onClick={this.deleteDefaultAddress}>삭제</p>
+          <div className="Menu__section">
+            <p className="Menu__section-selected" onClick={this.setDefaultAddress}>기본 배송지 설정</p>
+            <p className="Menu__section-delete" onClick={this.deleteDefaultAddress}>삭제</p>
           </div>
         }
         <span className={setDefaultAddress ? "AddressTile__tag" : ""}>
@@ -68,4 +68,4 @@ class AppMenu extends Component {
   }
 }
 
-export default AppMenu
+export default Menu

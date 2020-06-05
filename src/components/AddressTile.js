@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AppMenu from './AppMenu';
+import Menu from './Menu';
 
 class AddressTile extends Component {
   render() {
@@ -9,7 +9,7 @@ class AddressTile extends Component {
       <div className="AddressTile">
         <p className="AddressTile__postnumber">[{address.postnumber}]</p>
         <p className="AddressTile__address">{address.address}</p>
-        <AppMenu/>
+        <Menu/>
       </div>
     );
 
