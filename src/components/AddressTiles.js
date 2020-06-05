@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddressTile from './AddressTile';
 import ListButton from './ListButton';
+import NoAddresses from './NoAddresses';
 
 class AddressTiles extends Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class AddressTiles extends Component {
     return (
         <div>
           <ul>{result}</ul>
+          <NoAddresses/>
           <ListButton onClick={this.handleClick}/>
          </div>
       )

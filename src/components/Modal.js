@@ -4,8 +4,10 @@ class Modal extends Component {
   constructor(props) {
       super(props);
       this.handleClick = this.handleClick.bind(this);
+      this.acceptDeletion = this.acceptDeletion.bind(this);
       this.state = {
-        modalOpen: true
+        modalOpen: true,
+        isDelete: false
       };
   }
 
@@ -13,6 +15,13 @@ class Modal extends Component {
     this.setState( ()=>({
       modalOpen: false
     }));
+  }
+
+  acceptDeletion() {
+    this.setState( ()=> ({
+      modalOpen: false,
+      isDelete: true
+    }))
   }
 
   render() {
@@ -25,7 +34,7 @@ class Modal extends Component {
           <span className="Modal__horizontal-divider"></span>
           <p className="Modal__question">정말 삭제하시겠습니까?</p>
           <span className="Modal__vertical-divider"></span>
-          <p className="Modal__accept-button">확인</p>
+          <p className="Modal__accept-button" onClick={this.acceptDeletion}>확인</p>
           <p className="Modal__decline-button">취소</p>
         </div>
     </div>

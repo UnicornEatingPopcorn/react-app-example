@@ -1,32 +1,25 @@
-
 import {
-  REQUEST_ADDRESSES,
-  RECEIVE_ADDRESSES
+  SET_VISIBILITY_FILTER,
+  RECEIVE_ADDRESSES,
+  VisibilityFilters
 } from '../actions/actions'
 
-function addresses(
-  state = {
-    isFetching: false,
-    addresses: []
-  },
-  action
-) {
+const initialState = {
+  VisibilityFilters: VisibilityFilters.SHOW_ALL,
+  addresses: []
+}
+
+function addresses( state = initialState, action) {
   switch (action.type) {
-    case REQUEST_ADDRESSES:
+    case SET_VISIBILITY_FILTER:
       return Object.assign({}, state, {
-        isFetching: true
+        visibilityFilter: action.filter
       })
     case RECEIVE_ADDRESSES:
       return Object.assign({}, state, {
-        isFetching: false,
-        addresses: action.addresses,
-        lastUpdated: action.receivedAt
+        addresses: [...state.addresses]
       })
     default:
       return state
   }
 }
-
-const rootReducer = addresses()
-
-export default rootReducer

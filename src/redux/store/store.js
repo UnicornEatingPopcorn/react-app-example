@@ -1,6 +1,13 @@
 import { createStore } from "redux";
-import rootReducer from "../reducers/reducers";
+import addresses from '../reducers/reducers'
 
-const store = createStore(rootReducer);
+const store = createStore(addresses);
+
+import {
+  SET_VISIBILITY_FILTER,
+  RECEIVE_ADDRESSES,
+  VisibilityFilters
+} from '../actions/actions'
+
 
 export default store;
