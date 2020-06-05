@@ -5,32 +5,42 @@ import Modal from "./Modal";
 class AppMenu extends Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.setDefaultAddress = this.setDefaultAddress.bind(this);
+    this.deleteDefaultAddress = this.deleteDefaultAddress.bind(this);
     this.handleMouseHover = this.handleMouseHover.bind(this);
     this.state = {
       isHovering: false,
-      modalOpen: false
+      modalOpen: false,
+      isDefaultAddress: false,
+      isDeleteAddress: false
     };
   }
 
   handleMouseHover() {
-    this.setState(this.toggleHoverState);
+    this.setState((state)=> ({
+      isHovering: !state.isHovering
+    }));
   }
 
-  toggleHoverState(state) {
-    return {
-      isHovering: !state.isHovering,
-    };
-  }
-
-  handleClick() {
-    this.setState( state=> ({
-      modalOpen: !state.modalOpen
+  setDefaultAddress() {
+    this.setState( ()=> ({
+      isDefaultAddress: true,
+      isHovering: false
     }))
   }
 
+  deleteDefaultAddress() {
+    this.setState( ()=> ({
+      isDeleteAddress: true,
+      isHovering: false,
+      isDefaultAddress: false
+    }))
+  }
+
+
   render() {
-    const modalOpenRequest = this.state.modalOpen
+    const modalOpenRequest = this.state.isDeleteAddress
+    const setDefaultAddress = this.state.isDefaultAddress
 
     return (
       <div>
@@ -40,10 +50,18 @@ class AppMenu extends Component {
         {
           this.state.isHovering &&
           <div className="App__menu">
-            <p className="App__menu-selected">기본 배송지 설정</p>
-            <p className="App__menu-delete" onClick={this.handleClick}>삭제</p>
+            <p className="App__menu-selected" onClick={this.setDefaultAddress}>기본 배송지 설정</p>
+            <p className="App__menu-delete" onClick={this.deleteDefaultAddress}>삭제</p>
           </div>
         }
+        <span className={setDefaultAddress ? "AddressTile__tag" : ""}>
+          <p className={setDefaultAddress ? "visible" : "is-hidden"}>기본</p>
+        </span>
+        <div className={setDefaultAddress ? "AddressTile__default" : "is-hidden"}>
+          <span className="AddressTile__default-address">
+            <p>기본 배송지가 변경되었습니다.</p>
+          </span>
+        </div>
         <Modal isOpened={modalOpenRequest}/>
       </div>
     );

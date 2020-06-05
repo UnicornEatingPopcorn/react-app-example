@@ -10,7 +10,7 @@ class Modal extends Component {
   }
 
   handleClick() {
-    this.setState( state=>({
+    this.setState( ()=>({
       modalOpen: false
     }));
   }
