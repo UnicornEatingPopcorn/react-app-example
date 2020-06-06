@@ -24,6 +24,7 @@ class AppTablet extends Component {
   }
 
   render() {
+    const isOpenForm = this.state.isOpenForm
     return (
      <div id="tablet-version">
         <div className="App__tablet-container">
@@ -34,7 +35,7 @@ class AppTablet extends Component {
           <AddressTiles/>
         </div>
         <AppInfo/>
-        <NewAddressForm handleSubmit={this.handleSubmit} openRequest={this.isOpenForm}/>
+        <NewAddressForm handleSubmit={this.handleSubmit} openRequest={isOpenForm}/>
      </div>
     )
   }

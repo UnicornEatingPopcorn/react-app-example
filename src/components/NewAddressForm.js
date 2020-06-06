@@ -41,31 +41,34 @@ render() {
 
     return (
       <div className={openForm && this.state.isCloseModal ? "modal is-active" : "modal is-hidden"}>
-        <div className="modal-background">
-            <form className="NewAddressForm" onSubmit={this.handleSubmit}>
-              <div className="NewAddressForm__start">
-                <p className="NewAddressForm__title">배송지 추가</p>
-                <p className="NewAddressForm__close-button" onClick={this.closeModal}>X</p>
+        <div className="modal-background"></div>
+        <div className="modal-content NewAddressForm">
+          <form onSubmit={this.handleSubmit}>
+            <div className="NewAddressForm__start">
+              <p className="NewAddressForm__title">배송지 추가</p>
+              <p className="NewAddressForm__close-button" onClick={this.closeModal}>X</p>
+            </div>
+            <div className="field is-horizontal NewAddressForm__field">
+              <div className="control NewAddressForm__name-control">
+                <input className="input NewAddressForm__name-input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange}/>
               </div>
-              <div className="control NewAddressForm__name-input">
-                <input className="input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange}/>
+              <div className="control NewAddressForm__postalCode-control">
+                <input className="input NewAddressForm__postalCode-input" type="text" name="postalCode" value={postalCode} placeholder="우편번호" onChange={this.handleInputChange}/>
               </div>
-              <div className="control NewAddressForm__postalCode-input">
-                <input className="input" type="text" name="postalCode" value={postalCode} placeholder="우편번호" onChange={this.handleInputChange}/>
-              </div>
-              <div className="control NewAddressForm__address-input">
-                <input className="input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange}/>
-              </div>
-              <div className="control">
-                <label className="checkbox">
-                  <input type="checkbox"/>
-                  기본 배송지로 등록
-                </label>
-              </div>
-              <div className="control">
-                <button className="button NewAddressForm__button is-danger">등록 완료</button>
-              </div>
-            </form>
+            </div>
+            <div className="control NewAddressForm__address-control">
+              <input className="input NewAddressForm__address-input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange}/>
+            </div>
+            <div className="control">
+              <label className="checkbox">
+                <input type="checkbox"/>
+                기본 배송지로 등록
+              </label>
+            </div>
+            <div className="control">
+              <button className="button NewAddressForm__button is-danger">등록 완료</button>
+            </div>
+          </form>
         </div>
       </div>
       )

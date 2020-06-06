@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import AddressTiles from '../components/AddressTiles'
 import AppInfo from '../components/AppInfo'
-import NewAddressForm from '../components/NewAddressForm';
+import NewAddressFormMobile from '../components/NewAddressFormMobile';
 
 class AppMobile extends Component {
   constructor(props){
@@ -36,7 +36,7 @@ class AppMobile extends Component {
           <AddressTiles/>
           <AppInfo/>
         </div>
-        <NewAddressForm handleSubmit={this.handleSubmit} openRequest={isOpenForm}/>
+        <NewAddressFormMobile handleSubmit={this.handleSubmit} openRequest={isOpenForm}/>
       </div>
     )
   }

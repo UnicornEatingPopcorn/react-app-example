@@ -24,6 +24,8 @@ class AppDesktop extends Component {
   }
 
   render() {
+    const isOpenForm = this.state.isOpenForm
+
     return (
       <div id="desktop-version">
         <div className="columns">
@@ -40,7 +42,7 @@ class AppDesktop extends Component {
             <AppInfo/>
           </div>
         </div>
-        <NewAddressForm handleSubmit={this.handleSubmit} openRequest={this.isOpenForm}/>
+        <NewAddressForm handleSubmit={this.handleSubmit} openRequest={isOpenForm}/>
       </div>
     )
   }
