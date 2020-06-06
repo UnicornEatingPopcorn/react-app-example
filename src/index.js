@@ -6,14 +6,17 @@ import * as serviceWorker from './serviceWorker'
 import './fonts/AppleSDGothicNeoB.ttf'
 import './fonts/AppleSDGothicNeoR.ttf'
 import './fonts/AppleSDGothicNeoSB.ttf'
+import {BrowserRouter} from 'react-router-dom'
 //import { Provider } from "react-redux"
 //import store from "./store/store"
 
 ReactDOM.render(
   //<Provider store={store}>
+  <BrowserRouter>
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
+    </React.StrictMode>
+  </BrowserRouter>,
   //</Provider>,
   document.getElementById('root')
 );
