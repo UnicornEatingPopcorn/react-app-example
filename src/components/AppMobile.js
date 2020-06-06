@@ -18,12 +18,14 @@ class AppMobile extends Component {
   }
 
   openNewAddressForm() {
-    this.setState(()=>({
-      isOpenForm: true
+    this.setState( (state) => ({
+      isOpenForm: !state.isOpenForm
     }))
   }
 
   render() {
+    const isOpenForm = this.state.isOpenForm
+
     return (
       <div id="mobile-version">
         <div className="App__mobile-container">
@@ -34,7 +36,7 @@ class AppMobile extends Component {
           <AddressTiles/>
           <AppInfo/>
         </div>
-        <NewAddressForm handleSubmit={this.handleSubmit} openRequest={this.isOpenForm}/>
+        <NewAddressForm handleSubmit={this.handleSubmit} openRequest={isOpenForm}/>
       </div>
     )
   }
