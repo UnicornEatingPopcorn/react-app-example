@@ -5,13 +5,13 @@ class AddressTile extends Component {
   render() {
     const address = this.props.address
     const addresses = this.props.addresses
-    const deleteAddress = this.props.removeAddress
+    const removeAddress = this.props.removeAddress
 
     return (
       <div className="AddressTile">
         <p className="AddressTile__postnumber">[{address.postnumber}]</p>
         <p className="AddressTile__address">{address.address}</p>
-        <Menu address={address} addresses={addresses} deleteDefaultAddress={deleteAddress}/>
+        <Menu removeAddress={removeAddress} address={address} addresses={addresses}/>
       </div>
     );
 

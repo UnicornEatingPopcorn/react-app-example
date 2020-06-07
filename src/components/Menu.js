@@ -41,8 +41,8 @@ class Menu extends Component {
   render() {
     const modalOpenRequest = this.state.isDeleteAddress
     const setDefaultAddress = this.state.isDefaultAddress
-    const deleteAddress = this.props.deleteDefaultAddress
     const address = this.props.address
+    const removeAddress = this.props.removeAddress
 
     return (
       <div>
@@ -64,7 +64,7 @@ class Menu extends Component {
             <p>기본 배송지가 변경되었습니다.</p>
           </span>
         </div>
-        <Modal address={address} deleteAddress={deleteAddress} isOpened={modalOpenRequest}/>
+        <Modal address={address} removeAddress={removeAddress} isOpened={modalOpenRequest}/>
       </div>
     );
   }

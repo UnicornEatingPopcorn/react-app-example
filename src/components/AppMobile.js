@@ -6,6 +6,7 @@ import NewAddressFormMobile from '../components/NewAddressFormMobile';
 class AppMobile extends Component {
   constructor(props){
     super(props);
+    this.removeAddress=this.removeAddress.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.openNewAddressForm = this.openNewAddressForm.bind(this)
     this.state = {
@@ -28,6 +29,16 @@ class AppMobile extends Component {
       isOpenForm: !state.isOpenForm
     }))
   }
+
+    removeAddress(address) {
+    const newAddresses = [...this.state.addresses]
+    const index = newAddresses.indexOf(address)
+    if(index !== -1) {
+      newAddresses.splice(index, 1);
+      this.setState({addresses: newAddresses})
+      }
+    }
+
 
   componentDidMount() {
     fetch("http://localhost:3000/addresses")
@@ -59,7 +70,7 @@ class AppMobile extends Component {
           <a className="App__link" onClick={this.openNewAddressForm}>+추가</a>
         </div>
         <div className="App__mobile-tiles">
-          <AddressTiles addresses={addresses} error={error} isLoaded={isLoaded} />
+          <AddressTiles addresses={addresses} error={error} isLoaded={isLoaded} removeAddress={this.removeAddress}/>
           <AppInfo/>
         </div>
         <NewAddressFormMobile handleSubmit={this.handleSubmit} openRequest={isOpenForm}/>
