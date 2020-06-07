@@ -37,10 +37,11 @@ class NewAddressFormMobile extends Component {
 
 
 render() {
-    const openForm = this.props.openRequest
-    const {name, postalCode, address} = this.state;
+  const openForm = this.props.openRequest
+  const {name, postalCode, address} = this.state;
 
-    return (
+
+  return (
       <div className={openForm && this.state.isCloseModal ? "modal is-active" : "modal is-hidden"}>
         <div className="modal-background">
             <form className="NewAddressFormMobile" onSubmit={this.handleSubmit}>

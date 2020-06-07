@@ -6,6 +6,7 @@ import NewAddressFormMobile from '../components/NewAddressFormMobile';
 class AppMobile extends Component {
   constructor(props){
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.openNewAddressForm = this.openNewAddressForm.bind(this)
     this.state = {
       addresses: [],
@@ -13,7 +14,8 @@ class AppMobile extends Component {
     }
   }
 
-  handleSubmit = address => {
+  handleSubmit(address) {
+    console.log("pupun")
     this.setState({ addresses: [...this.state.addresses, address] })
   }
 

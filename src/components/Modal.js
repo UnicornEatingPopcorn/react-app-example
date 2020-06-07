@@ -26,6 +26,8 @@ class Modal extends Component {
 
   render() {
     const modalOpen = this.props.isOpened
+    const acceptDeletion = this.props.deleteAddress
+    const addressForDelete = this.props.address
 
     return (
       <div className={modalOpen && this.state.modalOpen ? "modal is-active" : "modal is-hidden"}>
@@ -34,7 +36,7 @@ class Modal extends Component {
           <span className="Modal__horizontal-divider"></span>
           <p className="Modal__question">정말 삭제하시겠습니까?</p>
           <span className="Modal__vertical-divider"></span>
-          <p className="Modal__accept-button" onClick={this.acceptDeletion}>확인</p>
+            <p className="Modal__accept-button" onClick={()=>acceptDeletion(addressForDelete)}>확인</p>
           <p className="Modal__decline-button">취소</p>
         </div>
     </div>
