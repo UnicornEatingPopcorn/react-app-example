@@ -6,7 +6,7 @@ class Menu extends Component {
   constructor(props) {
     super(props);
     this.setDefaultAddress = this.setDefaultAddress.bind(this);
-    this.deleteDefaultAddress = this.deleteDefaultAddress.bind(this);
+    //this.deleteDefaultAddress = this.deleteDefaultAddress.bind(this);
     this.handleMouseHover = this.handleMouseHover.bind(this);
     this.state = {
       isHovering: false,
@@ -29,7 +29,7 @@ class Menu extends Component {
     }))
   }
 
-  deleteDefaultAddress() {
+  deleteAddress() {
     this.setState( ()=> ({
       isDeleteAddress: true,
       isHovering: false,
@@ -41,6 +41,8 @@ class Menu extends Component {
   render() {
     const modalOpenRequest = this.state.isDeleteAddress
     const setDefaultAddress = this.state.isDefaultAddress
+    const deleteAddress = this.props.deleteDefaultAddress
+    const address = this.props.address
 
     return (
       <div>
@@ -51,7 +53,7 @@ class Menu extends Component {
           this.state.isHovering &&
           <div className="Menu__section">
             <p className="Menu__section-selected" onClick={this.setDefaultAddress}>기본 배송지 설정</p>
-            <p className="Menu__section-delete" onClick={this.deleteDefaultAddress}>삭제</p>
+              <p className="Menu__section-delete" id={address.id} onClick={()=>deleteAddress(address)}>삭제</p>
           </div>
         }
         <span className={setDefaultAddress ? "AddressTile__tag" : ""}>
