@@ -6,19 +6,11 @@ import * as serviceWorker from './serviceWorker'
 import './fonts/AppleSDGothicNeoB.ttf'
 import './fonts/AppleSDGothicNeoR.ttf'
 import './fonts/AppleSDGothicNeoSB.ttf'
-import {BrowserRouter} from 'react-router-dom'
-//import { Provider } from "react-redux"
-//import store from "./store/store"
 
 ReactDOM.render(
-  //<Provider store={store}>
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>,
-  //</Provider>,
-  document.getElementById('root')
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>, document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

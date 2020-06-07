@@ -47,7 +47,6 @@ class NewAddressFormMobile extends Component {
     }))
   }
 
-
 render() {
   const openForm = this.props.openRequest
   const {name, postnumber, address} = this.state;
@@ -62,13 +61,13 @@ render() {
                 <img src={button} className="NewAddressFormMobile__close-button" onClick={this.closeModal}></img>
               </div>
               <div className="control NewAddressFormMobile__name-control">
-                <input className="input NewAddressFormMobile__name-input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange}/>
+                <input className="input NewAddressFormMobile__name-input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange} required/>
               </div>
               <div className="control NewAddressFormMobile__postnumber-control">
-                <input className="input NewAddressFormMobile__postnumber-input" type="text" name="postnumber" value={postnumber} placeholder="우편번호" onChange={this.handleInputChange}/>
+                <input className="input NewAddressFormMobile__postnumber-input" type="text" name="postnumber" value={postnumber} placeholder="우편번호" onChange={this.handleInputChange} required/>
               </div>
               <div className="control NewAddressFormMobile__address-control">
-                <input className="input NewAddressFormMobile__address-input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange}/>
+                <input className="input NewAddressFormMobile__address-input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange} maxlength="25" required/>
               </div>
               <div className="control">
                 <label className="checkbox">

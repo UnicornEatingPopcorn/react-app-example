@@ -149,6 +149,12 @@
       "postnumber": 132789,
       "name": "최고은",
       "address": "인천시 중구 주안대로 112, 정수빌딩 11층"
+    },
+    {
+      "postnumber": "1",
+      "name": "Earth",
+      "address": "Solar System",
+      "id": 12382727083
     }
   ],
   "default_address": {

@@ -62,14 +62,14 @@ render() {
             </div>
             <div className="field is-horizontal NewAddressForm__field">
               <div className="control NewAddressForm__name-control">
-                <input className="input NewAddressForm__name-input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange}/>
+                <input className="input NewAddressForm__name-input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange} required/>
               </div>
               <div className="control NewAddressForm__postalCode-control">
-                <input className="input NewAddressForm__postalCode-input" type="text" name="postalCode" value={postalCode} placeholder="우편번호" onChange={this.handleInputChange}/>
+                <input className="input NewAddressForm__postalCode-input" type="text" name="postalCode" value={postalCode} placeholder="우편번호" onChange={this.handleInputChange} required/>
               </div>
             </div>
             <div className="control NewAddressForm__address-control">
-              <input className="input NewAddressForm__address-input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange}/>
+              <input className="input NewAddressForm__address-input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange} maxlength="25" required/>
             </div>
             <div className="control">
               <label className="checkbox">
