@@ -9,9 +9,6 @@ class AddressTiles extends Component {
     this.removeAddress=this.removeAddress.bind(this)
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      error: null,
-      isLoaded: false,
-      addresses: [],
       size: 5
     };
   }
@@ -33,33 +30,15 @@ class AddressTiles extends Component {
     }
 }
 
-  componentDidMount() {
-    fetch("http://localhost:3000/addresses")
-      .then(response => response.json())
-      .then(data => {
-          this.setState({
-            isLoaded: true,
-            addresses: data,
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
-  }
-
   render() {
-    const { error, isLoaded, addresses, size } = this.state;
+    const { error, isLoaded, addresses } = this.props;
 
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      const result = addresses.slice(0,size).map((address) => {
+      const result = addresses.slice(0, 5).map((address) => {
         return <AddressTile key={address.id} addresses={addresses} removeAddress={this.removeAddress} address={address}/>
     })
     return (

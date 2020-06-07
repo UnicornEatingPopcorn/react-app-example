@@ -7,8 +7,9 @@ class NewAddressFormMobile extends Component {
     this.closeModal = this.closeModal.bind(this)
     this.initialState = {
       name: "",
-      postalCode: "",
+      postalNumber: "",
       address: "",
+      id: null,
       isCloseModal: true
     }
 

@@ -10,12 +10,13 @@ class AppMobile extends Component {
     this.openNewAddressForm = this.openNewAddressForm.bind(this)
     this.state = {
       addresses: [],
+      error: null,
+      isLoaded: false,
       isOpenForm: false
     }
   }
 
   handleSubmit(address) {
-    console.log("pupun")
     this.setState({ addresses: [...this.state.addresses, address] })
   }
 
@@ -25,8 +26,28 @@ class AppMobile extends Component {
     }))
   }
 
+  componentDidMount() {
+    fetch("http://localhost:3000/addresses")
+      .then(response => response.json())
+      .then(data => {
+          this.setState({
+            isLoaded: true,
+            addresses: data,
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
+
+
   render() {
     const isOpenForm = this.state.isOpenForm
+    const {addresses, error, isLoaded } = this.state
 
     return (
       <div id="mobile-version">
@@ -35,7 +56,7 @@ class AppMobile extends Component {
           <a className="App__link" onClick={this.openNewAddressForm}>+추가</a>
         </div>
         <div className="App__mobile-tiles">
-          <AddressTiles/>
+          <AddressTiles addresses={addresses} error={error} isLoaded={isLoaded} />
           <AppInfo/>
         </div>
         <NewAddressFormMobile handleSubmit={this.handleSubmit} openRequest={isOpenForm}/>
