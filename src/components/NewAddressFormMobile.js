@@ -7,9 +7,9 @@ class NewAddressFormMobile extends Component {
     this.closeModal = this.closeModal.bind(this)
     this.initialState = {
       name: "",
-      postalNumber: "",
+      postnumber: "",
       address: "",
-      id: null,
+      id: Math.floor(Math.random() * 3500000),
       isCloseModal: true
     }
 
@@ -39,7 +39,7 @@ class NewAddressFormMobile extends Component {
 
 render() {
   const openForm = this.props.openRequest
-  const {name, postalCode, address} = this.state;
+  const {name, postnumber, address} = this.state;
 
 
   return (
@@ -54,7 +54,7 @@ render() {
                 <input className="input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange}/>
               </div>
               <div className="control NewAddressFormMobile__postalCode-input">
-                <input className="input" type="text" name="postalCode" value={postalCode} placeholder="우편번호" onChange={this.handleInputChange}/>
+                <input className="input" type="text" name="postnumber" value={postnumber} placeholder="우편번호" onChange={this.handleInputChange}/>
               </div>
               <div className="control NewAddressFormMobile__address-input">
                 <input className="input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange}/>

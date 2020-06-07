@@ -17,7 +17,10 @@ class AppMobile extends Component {
   }
 
   handleSubmit(address) {
-    this.setState({ addresses: [...this.state.addresses, address] })
+    this.setState({
+      addresses: [...this.state.addresses, address],
+      isOpenForm: false
+    })
   }
 
   openNewAddressForm() {

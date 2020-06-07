@@ -38,7 +38,7 @@ class AddressTiles extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      const result = addresses.slice(0, 5).map((address) => {
+      const result = addresses.map((address) => {
         return <AddressTile key={address.id} addresses={addresses} removeAddress={this.removeAddress} address={address}/>
     })
     return (
