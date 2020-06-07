@@ -61,14 +61,14 @@ render() {
                 <p className="NewAddressFormMobile__title">배송지 추가</p>
                 <img src={button} className="NewAddressFormMobile__close-button" onClick={this.closeModal}></img>
               </div>
-              <div className="control NewAddressFormMobile__name-input">
-                <input className="input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange}/>
+              <div className="control NewAddressFormMobile__name-control">
+                <input className="input NewAddressFormMobile__name-input" type="text" name="name" value={name} placeholder="받는 사람" onChange={this.handleInputChange}/>
               </div>
-              <div className="control NewAddressFormMobile__postalCode-input">
-                <input className="input" type="text" name="postnumber" value={postnumber} placeholder="우편번호" onChange={this.handleInputChange}/>
+              <div className="control NewAddressFormMobile__postnumber-control">
+                <input className="input NewAddressFormMobile__postnumber-input" type="text" name="postnumber" value={postnumber} placeholder="우편번호" onChange={this.handleInputChange}/>
               </div>
-              <div className="control NewAddressFormMobile__address-input">
-                <input className="input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange}/>
+              <div className="control NewAddressFormMobile__address-control">
+                <input className="input NewAddressFormMobile__address-input" type="text" name="address" value={address} placeholder="주소" onChange={this.handleInputChange}/>
               </div>
               <div className="control">
                 <label className="checkbox">
