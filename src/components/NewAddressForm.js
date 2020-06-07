@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import button from '../close-button.png'
+import axios from 'axios'
 
 class NewAddressForm extends Component {
   constructor(props) {
@@ -18,6 +19,16 @@ class NewAddressForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.handleSubmit(this.state)
+
+    axios.post("http://localhost:3000/addresses", {
+      postnumber: this.state.postnumber,
+      name: this.state.name,
+      address: this.state.address
+    })
+      .then(response => {
+        console.log(response)
+      })
+
     this.setState(this.initialState)
 }
 
