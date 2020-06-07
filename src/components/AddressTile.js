@@ -8,7 +8,7 @@ class AddressTile extends Component {
     const removeAddress = this.props.removeAddress
 
     return (
-      <div className="AddressTile">
+      <div className="AddressTile" key={address.id}>
         <p className="AddressTile__postnumber">[{address.postnumber}]</p>
         <p className="AddressTile__address">{address.address}</p>
         <Menu removeAddress={removeAddress} address={address} addresses={addresses}/>
