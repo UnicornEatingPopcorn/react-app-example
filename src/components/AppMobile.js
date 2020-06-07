@@ -37,9 +37,13 @@ class AppMobile extends Component {
     if(index !== -1) {
       newAddresses.splice(index, 1);
       this.setState({addresses: newAddresses})
-      }
-  }
 
+      axios.delete(`http://localhost:3000/addresses/${address.id}`)
+        .then(response => {
+          console.log(response)
+        })
+    }
+  }
 
   componentDidMount() {
     axios.get("http://localhost:3000/addresses")
