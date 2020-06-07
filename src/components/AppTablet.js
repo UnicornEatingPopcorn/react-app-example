@@ -7,13 +7,15 @@ import axios from 'axios'
 class AppTablet extends Component {
   constructor(props){
     super(props);
+    this.openAddresses = this.openAddresses.bind(this)
     this.removeAddress=this.removeAddress.bind(this)
     this.openNewAddressForm = this.openNewAddressForm.bind(this)
     this.state = {
       addresses: [],
       error: null,
       isLoaded: false,
-      isOpenForm: false
+      isOpenForm: false,
+      size: 5,
     }
   }
 
@@ -44,6 +46,20 @@ class AppTablet extends Component {
     }
   }
 
+  openAddresses() {
+    let size = this.state.size;
+    //let isShowButton = this.state.isShowButton;
+
+    if (size <= this.state.addresses.length - 1){
+      size += 5;
+    } else {
+      return
+    };
+    this.setState(()=>({
+      size: size,
+    }));
+  }
+
    componentDidMount() {
     axios.get("http://localhost:3000/addresses")
       .then(res => {
@@ -65,7 +81,7 @@ class AppTablet extends Component {
 
   render() {
     const isOpenForm = this.state.isOpenForm
-    const {addresses, error, isLoaded } = this.state
+    const {addresses, error, isLoaded, size } = this.state
 
     return (
      <div id="tablet-version">
@@ -74,7 +90,8 @@ class AppTablet extends Component {
           <a className="App__link" onClick={this.openNewAddressForm}>+추가</a>
         </div>
         <div className="App__tablet-tiles">
-          <AddressTiles addresses={addresses} error={error} isLoaded={isLoaded} removeAddress={this.removeAddress}/>
+          <AddressTiles addresses={addresses} error={error} isLoaded={isLoaded} removeAddress={this.removeAddress} size={size}/>
+          <div className="App__button" onClick={this.openAddresses}>더보기</div>
         </div>
         <AppInfo/>
         <NewAddressForm handleSubmit={this.handleSubmit} openRequest={isOpenForm}/>
