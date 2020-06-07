@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import button from '../close-button.png'
 
 class NewAddressForm extends Component {
   constructor(props) {
@@ -46,7 +47,7 @@ render() {
           <form onSubmit={this.handleSubmit}>
             <div className="NewAddressForm__start">
               <p className="NewAddressForm__title">배송지 추가</p>
-              <p className="NewAddressForm__close-button" onClick={this.closeModal}>X</p>
+              <img src={button} className="NewAddressForm__close-button" onClick={this.closeModal}></img>
             </div>
             <div className="field is-horizontal NewAddressForm__field">
               <div className="control NewAddressForm__name-control">
