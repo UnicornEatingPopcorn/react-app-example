@@ -16,8 +16,7 @@ class AppMobile extends Component {
       error: null,
       isLoaded: false,
       isOpenForm: false,
-      size: 5,
-      //isShowMoreAddresses: false
+      size: 5
     }
   }
 
@@ -50,14 +49,11 @@ class AppMobile extends Component {
 
   openAddresses() {
     let size = this.state.size;
-    if (size <= this.state.addresses.length -1){
-      size += 5;
-      } else {
-        return ;
-      }
-    this.setState(()=>({
-      size: size,
-      // isShowMoreAddresses: !state.isShowMoreAddresses
+
+    if (size <= this.state.addresses.length -1){ size += 5 };
+
+     this.setState(()=>({
+      size: size
     }));
   }
 
@@ -91,9 +87,9 @@ class AppMobile extends Component {
         </div>
         <div className="App__mobile-tiles">
           <AddressTiles addresses={addresses} error={error} isLoaded={isLoaded} removeAddress={this.removeAddress} size={size}/>
-          <div className="App__button" onClick={this.openAddresses}>더보기</div>
-          <AppInfo/>
+          <div className={size === addresses.length ? "App__button-invisible" : "App__button"} onClick={this.openAddresses}>더보기</div>
         </div>
+        <AppInfo/>
         <NewAddressFormMobile handleSubmit={this.handleSubmit} openRequest={isOpenForm}/>
       </div>
     )

@@ -48,15 +48,11 @@ class AppDesktop extends Component {
 
   openAddresses() {
     let size = this.state.size;
-    //let isShowButton = this.state.isShowButton;
 
-    if (size <= this.state.addresses.length - 1){
-      size += 5;
-    } else {
-      return
-    };
+    if (size <= this.state.addresses.length - 1){ size += 5 };
+
     this.setState(()=>({
-      size: size,
+      size: size
     }));
   }
 
@@ -94,7 +90,7 @@ class AppDesktop extends Component {
             </div>
             <div className="App__tablet-tiles">
               <AddressTiles addresses={addresses} error={error} isLoaded={isLoaded} removeAddress={this.removeAddress} size={size}/>
-              <div className="App__button" onClick={this.openAddresses}>더보기</div>
+              <div className={size === addresses.length ? "App__button-invisible" : "App__button"} onClick={this.openAddresses}>더보기</div>
             </div>
           </div>
           <div className="column is-paddingless">
