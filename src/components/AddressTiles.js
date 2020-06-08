@@ -15,7 +15,7 @@ class AddressTiles extends Component {
       return <NoAddresses/>;
     } else {
       const result = addresses.slice(0, size).map((address) => {
-        return <AddressTile key={address.id} addresses={addresses} address={address} removeAddress={removeAddress} />
+        return <AddressTile key={address.id} addresses={addresses} address={address} removeAddress={removeAddress}/>
     })
     return (
         <div>
